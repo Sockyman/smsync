@@ -105,7 +105,7 @@ fn sync_conflict_resolver(
         .ok_or(Error::InvalidGame(game.to_owned()))?;
 
     if !game_config.sync() {
-        // error
+        return Err(Error::NotSyncable(game.to_owned()));
     }
 
     let remote_path = config.remote.join(game);

@@ -34,6 +34,9 @@ pub enum Error {
 
     #[error("invalid game '{0}'")]
     InvalidGame(String),
+
+    #[error("'{0}' is not configured for sync")]
+    NotSyncable(String),
 }
 
 pub trait IntoErrorContext<T> {
